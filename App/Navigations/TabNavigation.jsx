@@ -3,11 +3,19 @@ import React from 'react'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import HomeScreen from '../Screen/HomeScreen/HomeScreen';
 import { Ionicons } from '@expo/vector-icons';
-import FavoriteScreen from '../Screen/FavoriteScreen/FavoriteScreen';
+import Addcar from '../Screen/Addcar/Addcar'
 import ProfileScreen from '../Screen/ProfileScreen/ProfileScreen';
+import WalletScreen from '../Screen/WalletScreen/WalletScreen'
 import Colors from '../Utils/Colors';
+import { FontAwesome5 } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons';
+import { Entypo } from '@expo/vector-icons';
+import { MaterialIcons } from '@expo/vector-icons';
+
+
 const Tab=createBottomTabNavigator();
+
+
 export default function TabNavigation() {
   return (
     <Tab.Navigator screenOptions={{
@@ -19,18 +27,25 @@ export default function TabNavigation() {
                 tabBarLabel:'Search',
                 tabBarActiveTintColor:Colors.PRIMARY,
                 tabBarIcon:({color,size})=>(
-                    <Ionicons name="ios-search" 
-                    size={size} color={color} />
+                    <Entypo name="location" size={24} color="black" />
                 )
             }} />
-        <Tab.Screen name='favorite'
-       component={FavoriteScreen} 
+             <Tab.Screen name='wallet'
+       component={WalletScreen}
+            options={{
+                tabBarLabel:'Wallet',
+                tabBarActiveTintColor:Colors.PRIMARY,
+                tabBarIcon:({color,size})=>(
+                    <FontAwesome5 name="wallet" size={22} color="black" />
+                )
+            }} />
+        <Tab.Screen name='add'
+       component={Addcar} 
        options={{
-        tabBarLabel:'Favorite',
+        tabBarLabel:'Add car',
         tabBarActiveTintColor:Colors.PRIMARY,
         tabBarIcon:({color,size})=>(
-            <Ionicons name="ios-heart" 
-            size={size} color={color} />
+            <FontAwesome name="car" size={24} color="black" />
         )
     }} />
         <Tab.Screen name='profile'
@@ -39,8 +54,7 @@ export default function TabNavigation() {
         tabBarLabel:'Profile',
         tabBarActiveTintColor:Colors.PRIMARY,
         tabBarIcon:({color,size})=>(
-            <FontAwesome name="user-circle" 
-            size={size} color={color} />
+            <MaterialIcons name="account-circle" size={27} color="black" />
         )
     }} />
     </Tab.Navigator>

@@ -7,6 +7,7 @@ import { UserLocationContext } from '../../Context/UserLocationContext'
 import GlobalApi from '../../Utils/GlobalApi'
 import PlaceListView from './PlaceListView'
 import { SelectMarkerContext } from '../../Context/SelectMarkerContext'
+import Colors from '../../Utils/Colors'
 
 export default function HomeScreen() {
 
@@ -45,12 +46,12 @@ export default function HomeScreen() {
     <View>
       <View style={styles.headerContainer}>
         <Header />
-        <SearchBar 
+        {/* <SearchBar 
         searchedLocation={(location) => 
         setLocation({
           latitude:location.lat,
           longitude:location.lng
-        })} />
+        })} /> */}
       </View>
       {!placeList?<ActivityIndicator size={'large'}/>
       : <AppMapView placeList={placeList}/>}
@@ -65,9 +66,11 @@ const styles = StyleSheet.create({
   headerContainer: {
     position: 'absolute',
     zIndex: 10,
-    padding: 10,
+    padding: 26,
+    paddingBottom: 10,
     width: '100%',
-    paddingHorizontal: 20
+    paddingHorizontal: 20,
+    backgroundColor: Colors.WHITE,
   },
   placeListContainer:{
     position:'absolute',

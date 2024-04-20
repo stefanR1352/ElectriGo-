@@ -35,8 +35,8 @@ export default function FavoriteScreen() {
       <Text style={{
         padding: 10, fontFamily: 'outfit-medium',
         fontSize: 30
-      }}>My Favorite
-        <Text style={{ color: Colors.PRIMARY }}> Place</Text></Text>
+      }}>My account
+        <Text style={{ color: Colors.PRIMARY }}> IT WORKS!</Text></Text>
       {!favList ? <View style={{
         height: '100%',
         display: 'flex', alignItems: 'center',

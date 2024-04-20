@@ -13,7 +13,7 @@ export default function Header() {
       <Image source={require('./../../../assets/images/logo1.png')}
         style={{width:200,height:45,objectFit:'contain'}}
       />
-      <FontAwesome name="filter" size={26} color="black" />
+      <FontAwesome name="filter" size={26} color={Colors.WHITE} />
     </View>
   )
 }
