@@ -7,10 +7,14 @@ import LoginScreen from './App/Screen/LoginScreen/LoginScreen';
 import * as SecureStore from "expo-secure-store";
 import { ClerkProvider,SignedIn, SignedOut  } from "@clerk/clerk-expo";
 import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from "@react-navigation/native-stack"
 import TabNavigation from './App/Navigations/TabNavigation';
 import * as Location from 'expo-location';
 import { UserLocationContext } from './App/Context/UserLocationContext';
 import GlobalApi from './App/Utils/GlobalApi';
+import LoginPage from './App/Screen/LoginScreen/Login';
+
+
 // SplashScreen.preventAutoHideAsync();
 const tokenCache = {
   async getToken(key) {
@@ -28,6 +32,9 @@ const tokenCache = {
     }
   },
 };
+
+const Stack = createNativeStackNavigator()
+
 export default function App() {
 
   const [fontsLoaded] = useFonts({
@@ -74,15 +81,15 @@ export default function App() {
     text = JSON.stringify(location);
   }
 
-  // const onLayoutRootView = useCallback(async () => {
-  //   if (fontsLoaded) {
-  //     await SplashScreen.hideAsync();
-  //   }
-  // }, [fontsLoaded]);
+  const onLayoutRootView = useCallback(async () => {
+    if (fontsLoaded) {
+      await SplashScreen.hideAsync();
+    }
+  }, [fontsLoaded]);
 
-  // if (!fontsLoaded) {
-  //   return null;
-  // }
+  if (!fontsLoaded) {
+    return null;
+  }
   return (
     <ClerkProvider 
     tokenCache={tokenCache}
@@ -98,8 +105,16 @@ export default function App() {
       </SignedIn>
       <SignedOut>
         <NavigationContainer>
-            <TabNavigation/>
-          </NavigationContainer>
+          <Stack.Navigator initialRouteName="LoginPage">
+            <Stack.Screen name="LoginPage" component={LoginPage} options={{
+              headerShown:false }}/>
+            <Stack.Screen name="Tab" component={TabNavigation}  options={{
+              headerShown:false,
+            }}/>
+            
+        
+          </Stack.Navigator>
+        </NavigationContainer>
       </SignedOut>
       
       <StatusBar style="auto" />
@@ -108,6 +123,19 @@ export default function App() {
     </ClerkProvider>
   
   );
+  // return (
+  // <NavigationContainer>
+      // <Stack.Navigator>
+      //   <Stack.Screen name="Tab" component={TabNavigation}  options={{
+      //     headerShown:false,
+      //   }}/>
+      //   <Stack.Screen name="LoginPage" component={LoginPage} options={{
+      //     headerShown:false }}/>
+        
+      //   </Stack.Navigator>
+  //   </NavigationContainer>
+
+  // );
 }
 
 const styles = StyleSheet.create({

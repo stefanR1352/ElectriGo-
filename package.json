@@ -12,6 +12,7 @@
     "@clerk/clerk-expo": "^0.19.22",
     "@react-navigation/bottom-tabs": "^6.5.11",
     "@react-navigation/native": "^6.1.9",
+    "@react-navigation/native-stack": "^6.9.26",
     "@types/react": "~18.2.45",
     "axios": "^1.6.2",
     "expo": "^50.0.0",
