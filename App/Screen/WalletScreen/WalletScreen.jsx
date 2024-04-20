@@ -8,6 +8,7 @@ import { useUser } from '@clerk/clerk-expo';
 import { app } from '../../Utils/FirebaseConfig';
 import PlaceItem from '../HomeScreen/PlaceItem';
 import { StyleSheet } from 'react-native';
+import { FontDisplay } from 'expo-font';
 
 export default function FavoriteScreen() {
   const db = getFirestore(app);
@@ -40,7 +41,9 @@ export default function FavoriteScreen() {
         <View style={styles.Cont1}>
         </View>
         <View style={styles.roundedSquare}>
-
+        <Text alignSelf='center'>
+             CURRENT CREDIT
+        </Text>
         </View>
       
     </View>
@@ -66,10 +69,13 @@ const styles = StyleSheet.create({
         width: 320, // specify the size of the square
         height: 400, // make sure height and width are the same for a perfect square
         borderRadius: 60, // adjust for desired roundness of corners
-        backgroundColor: Colors.GRAY, // choose a background color
+        backgroundColor: Colors.GREEN, // choose a background color
         shadowOpacity:50,
-        shadowRadius:20,
+        shadowRadius:15,
         shadowColor:Colors.BLACK,
+        padding:80,
+        fontFamily:'Times New Roman',
+
         // Add any additional styling as needed
       },
 })
