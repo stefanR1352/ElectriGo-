@@ -7,6 +7,7 @@ import LoginScreen from './App/Screen/LoginScreen/LoginScreen';
 import * as SecureStore from "expo-secure-store";
 import { ClerkProvider,SignedIn, SignedOut  } from "@clerk/clerk-expo";
 import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from "@react-navigation/native-stack"
 import TabNavigation from './App/Navigations/TabNavigation';
 import * as Location from 'expo-location';
 import { UserLocationContext } from './App/Context/UserLocationContext';
@@ -35,6 +36,7 @@ const tokenCache = {
 const Stack = createNativeStackNavigator()
 
 export default function App() {
+
   const [fontsLoaded] = useFonts({
     'outfit': require('./assets/fonts/Outfit-Regular.ttf'),
     'outfit-medium': require('./assets/fonts/Outfit-SemiBold.ttf'),
