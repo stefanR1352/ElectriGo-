@@ -5,13 +5,14 @@ import HomeScreen from '../Screen/HomeScreen/HomeScreen';
 import { Ionicons } from '@expo/vector-icons';
 import Addcar from '../Screen/Addcar/Addcar'
 import ProfileScreen from '../Screen/ProfileScreen/ProfileScreen';
+import SimpleProfileScreen from '../Screen/ProfileScreen/SimpleProfileScreen';
 import WalletScreen from '../Screen/WalletScreen/WalletScreen'
 import Colors from '../Utils/Colors';
 import { FontAwesome5 } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons';
 import { Entypo } from '@expo/vector-icons';
 import { MaterialIcons } from '@expo/vector-icons';
-
+import ChargeCar from '../Screen/ChargeCarScreen/ChargeCarScreen';
 
 const Tab=createBottomTabNavigator();
 
@@ -48,8 +49,17 @@ export default function TabNavigation() {
             <FontAwesome name="car" size={24} color="black" />
         )
     }} />
+     <Tab.Screen name='charge'
+       component={ChargeCar} 
+       options={{
+        tabBarLabel:'Charge car',
+        tabBarActiveTintColor:Colors.PRIMARY,
+        tabBarIcon:({color,size})=>(
+            <Entypo name="battery" size={24} color="black" />
+        )
+    }} />
         <Tab.Screen name='profile'
-       component={ProfileScreen} 
+       component={ SimpleProfileScreen } 
        options={{
         tabBarLabel:'Profile',
         tabBarActiveTintColor:Colors.PRIMARY,

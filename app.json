@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "EV-Charging-Station-App",
-    "slug": "EV-Charging-Station-App",
+    "name": "ElectriGo",
+    "slug": "ElectriGo",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -16,7 +16,7 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.tubeguruji.evstationfinder"
+      "bundleIdentifier": "com.Electri.Go"
     },
     "android": {
       "adaptiveIcon": {
@@ -28,7 +28,7 @@
         "android.permission.ACCESS_FINE_LOCATION",
         "android.permission.FOREGROUND_SERVICE"
       ],
-      "package": "com.tubeguruji.evstationfinder"
+      "package": "com.Electri.Go"
     },
     "web": {
       "favicon": "./assets/favicon.png"
@@ -37,7 +37,7 @@
       [
         "expo-location",
         {
-          "locationAlwaysAndWhenInUsePermission": "Allow EV Station App to use your location."
+          "locationAlwaysAndWhenInUsePermission": "Allow ElectriGo to use your location."
         }
       ]
     ],
@@ -46,6 +46,6 @@
         "projectId": "5b45b860-4d79-47f1-b3b9-eceae9d265dd"
       }
     },
-    "scheme":"com.tubeguruji.evstationfinder"
+    "scheme":"com.Electri.Go"
   }
 }
