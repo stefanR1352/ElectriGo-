@@ -6,13 +6,12 @@ export default function LoginPage({navigation}) {
   return (
     <ScrollView style={{backgroundColor:Colors.WHITE}}>
         <View style={{height: 1100}}>
-            <Image source = {require('../../../assets/images/car-marker.png')} 
+             <Image source = {require('../../../assets/images/ElectriGo6.png')} 
                 style={styles.loginImage}
-            />
-            <Text style = {{textAlign:'center',marginBottom:50, fontSize:70,fontFamily: 'Arial-BoldMT',color:Colors.BEST}}>
-        FINTRACK
-            </Text>
-
+            /> 
+            <Text> </Text>
+            <Text> </Text>
+            <Text> </Text>
             {/* TextINput */}
             <View style={styles.container}>
                 <TextInput 
@@ -45,8 +44,7 @@ const styles = StyleSheet.create({
         width:300,
         height: 260,
         marginTop:100,
-        alignSelf:2
-        
+        alignSelf:2,
     },
     button2:{
         padding:20,

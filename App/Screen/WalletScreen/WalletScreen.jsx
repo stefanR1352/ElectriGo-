@@ -41,9 +41,12 @@ export default function FavoriteScreen() {
         <View style={styles.Cont1}>
         </View>
         <View style={styles.roundedSquare}>
-        <Text alignSelf='center'>
-             CURRENT CREDIT
-        </Text>
+        <Text style = {{textAlign:'center', fontSize:39,fontFamily: 'Arial-BoldMT',color:Colors.BEST}}>
+        Current credit:
+            </Text>
+        <Text style = {{textAlign:'center', padding: 40,fontSize:80,fontFamily: 'Arial-BoldMT',color:Colors.BEST}}>
+        100 RON
+            </Text>
         </View>
       
     </View>
@@ -73,7 +76,7 @@ const styles = StyleSheet.create({
         shadowOpacity:50,
         shadowRadius:15,
         shadowColor:Colors.BLACK,
-        padding:80,
+        padding:40,
         fontFamily:'Times New Roman',
 
         // Add any additional styling as needed
