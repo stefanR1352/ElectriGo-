@@ -13,6 +13,8 @@ import * as Location from 'expo-location';
 import { UserLocationContext } from './App/Context/UserLocationContext';
 import GlobalApi from './App/Utils/GlobalApi';
 import LoginPage from './App/Screen/LoginScreen/Login';
+import ScanNow from './App/Screen/ChargeCarScreen/ScanNow';
+import ChargeCar from './App/Screen/ChargeCarScreen/ChargeCarScreen';
 
 
 // SplashScreen.preventAutoHideAsync();
@@ -109,6 +111,9 @@ export default function App() {
             <Stack.Screen name="LoginPage" component={LoginPage} options={{
               headerShown:false }}/>
             <Stack.Screen name="Tab" component={TabNavigation}  options={{
+              headerShown:false,
+            }}/>
+            <Stack.Screen name="Charge" component={ChargeCar}  options={{
               headerShown:false,
             }}/>
             

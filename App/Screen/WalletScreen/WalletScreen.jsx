@@ -1,4 +1,4 @@
-import { View, Text, ActivityIndicator, FlatList } from 'react-native'
+import { View, Text, ActivityIndicator, FlatList, TouchableOpacity } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import Colors from '../../Utils/Colors'
 import HeaderWallet from './HeaderWallet'
@@ -48,6 +48,11 @@ export default function FavoriteScreen() {
         100 RON
             </Text>
         </View>
+        <TouchableOpacity style={styles.button2} >
+            <Text style={{textAlign:'center', fontSize:24,fontFamily:'Inria Sans', color:Colors.BLACK}}>
+                Add Money
+            </Text>
+        </TouchableOpacity>
       
     </View>
   )
@@ -81,4 +86,16 @@ const styles = StyleSheet.create({
 
         // Add any additional styling as needed
       },
+      button2:{
+        padding:20,
+        backgroundColor:Colors.BEST,
+        borderRadius: 10,
+        marginTop:80,
+        width:300,
+        height:75,
+        alignSelf:2,
+        borderWidth: 3, 
+        borderColor: Colors.BORDER,
+        
+    },
 })

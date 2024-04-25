@@ -6,7 +6,9 @@ import { Ionicons } from '@expo/vector-icons';
 import Addcar from '../Screen/Addcar/Addcar'
 import ProfileScreen from '../Screen/ProfileScreen/ProfileScreen';
 import SimpleProfileScreen from '../Screen/ProfileScreen/SimpleProfileScreen';
+import AddCarSimple from '../Screen/Addcar/AddCarSimple';
 import WalletScreen from '../Screen/WalletScreen/WalletScreen'
+import ScanNow from '../Screen/ChargeCarScreen/ScanNow';
 import Colors from '../Utils/Colors';
 import { FontAwesome5 } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons';
@@ -41,7 +43,7 @@ export default function TabNavigation() {
                 )
             }} />
         <Tab.Screen name='add'
-       component={Addcar} 
+       component={AddCarSimple} 
        options={{
         tabBarLabel:'Add car',
         tabBarActiveTintColor:Colors.PRIMARY,
@@ -49,8 +51,8 @@ export default function TabNavigation() {
             <FontAwesome name="car" size={24} color="black" />
         )
     }} />
-     <Tab.Screen name='charge'
-       component={ChargeCar} 
+     <Tab.Screen name='scan'
+       component={ScanNow} 
        options={{
         tabBarLabel:'Charge car',
         tabBarActiveTintColor:Colors.PRIMARY,
